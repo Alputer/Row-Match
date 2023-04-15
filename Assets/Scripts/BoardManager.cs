@@ -15,6 +15,8 @@ public class BoardManager : MonoBehaviour
 
     // Stores the jems that are displayed in the game
     public Gem[,] allGems;
+
+    public float gemSpeed;
    
     void Start(){
 
@@ -29,7 +31,7 @@ public class BoardManager : MonoBehaviour
                 Vector2 pos = new Vector2(x,y);
                 GameObject backgroundTile = Instantiate(tileBackgroundPrefab, pos, Quaternion.identity);
                 backgroundTile.transform.parent = transform; // So that tiles don't fill the whole screen in unity game object menu
-                backgroundTile.name = $"BG Tile - {x+1}, {y+1}";
+                backgroundTile.name = $"BG Tile - {x}, {y}";
 
                 Gem gemToUse = gems[Random.Range(0, gems.Length)];
 
