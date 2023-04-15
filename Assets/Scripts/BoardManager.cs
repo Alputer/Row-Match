@@ -9,9 +9,16 @@ public class BoardManager : MonoBehaviour
     public int height;
 
     public GameObject tileBackgroundPrefab;
+
+    // Store the prototypes
+    public Gem[] gems;
+
+    // Stores the jems that are displayed in the game
+    public Gem[,] allGems;
    
     void Start(){
 
+        allGems = new Gem[width, height];
         Setup();
 
     }
@@ -23,8 +30,21 @@ public class BoardManager : MonoBehaviour
                 GameObject backgroundTile = Instantiate(tileBackgroundPrefab, pos, Quaternion.identity);
                 backgroundTile.transform.parent = transform; // So that tiles don't fill the whole screen in unity game object menu
                 backgroundTile.name = $"BG Tile - {x+1}, {y+1}";
+
+                Gem gemToUse = gems[Random.Range(0, gems.Length)];
+
+                SpawnGem(new Vector2Int(x, y), gemToUse);
             }
         }
+    }
+
+    private void SpawnGem(Vector2Int pos, Gem gemToSpawn){
+        Gem gem = Instantiate(gemToSpawn, new Vector3(pos.x, pos.y, 0f) , Quaternion.identity);
+        gem.transform.parent = this.transform;
+        gem.name = $"Gem - {pos.x},{pos.y}";
+        allGems[pos.x, pos.y] = gem;
+
+        gem.SetupGem(pos, this);
     }
     
 }
