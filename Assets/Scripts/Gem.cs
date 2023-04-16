@@ -87,7 +87,7 @@ public class Gem : MonoBehaviour
             pos.y--;
 
         }
-        else if (swipeAngle >= 135 || swipeAngle <= -135 && pos.x > 0){
+        else if ((swipeAngle >= 135 || swipeAngle <= -135) && pos.x > 0){
 
             neighborGem = Board.allGems[pos.x - 1, pos.y];
             neighborGem.pos.x++;
