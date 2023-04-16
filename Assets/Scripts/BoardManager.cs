@@ -26,6 +26,7 @@ public class BoardManager : MonoBehaviour
     }
 
     private void Setup(){
+
         for(int x = 0; x < width; x++){
             for(int y = 0; y < height; y++){
                 Vector2 pos = new Vector2(x,y);
