@@ -20,12 +20,15 @@ public class BoardManager : MonoBehaviour
 
     public MatchFinder matchFinder;
 
+    public LevelManager levelManager;
+
     public enum BoardState {wait, move};
 
     public BoardState currentState = BoardState.move;
    
    void Awake(){
     this.matchFinder = FindObjectOfType<MatchFinder>();
+    this.levelManager = FindObjectOfType<LevelManager>();
    }
     void Start(){
 
@@ -33,10 +36,6 @@ public class BoardManager : MonoBehaviour
         Setup();
 
         
-    }
-
-    private void Update(){
-        //matchFinder.findAllMatches();
     }
 
     private void Setup(){

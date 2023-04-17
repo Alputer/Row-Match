@@ -23,11 +23,13 @@ public class Gem : MonoBehaviour
 
     public GemType type;
 
+    private LevelManager levelManager;
+
     // Neighbor gem to be swapped
     private Gem neighborGem;
-    void Start()
+    void Awake()
     {
-        
+        this.levelManager = FindObjectOfType<LevelManager>();
     }
 
     void Update(){
@@ -42,7 +44,7 @@ public class Gem : MonoBehaviour
         if(mousePressed && Input.GetMouseButtonUp(0)){
             mousePressed = false;
 
-           if(Board.currentState == BoardManager.BoardState.move){
+           if(Board.currentState == BoardManager.BoardState.move && this.levelManager.moveCount > 0){
 
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             calculateAngle();
@@ -59,7 +61,7 @@ public class Gem : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if(Board.currentState == BoardManager.BoardState.move){
+        if(Board.currentState == BoardManager.BoardState.move && this.levelManager.moveCount > 0){
 
         firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePressed = true;
@@ -130,6 +132,9 @@ public class Gem : MonoBehaviour
 
         Board.allGems[pos.x, pos.y] = this;
         Board.allGems[neighborGem.pos.x, neighborGem.pos.y] = neighborGem;
+
+        levelManager.moveMade();
+
         
         StartCoroutine(CheckMatch());
     }
