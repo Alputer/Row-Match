@@ -12,6 +12,6 @@ public class CameraManager : MonoBehaviour
     public int height;
     void Start(){
         Camera.main.orthographicSize = Mathf.Max(width,height); 
-        this.transform.position = new Vector3( (float)width / 2f - 0.5f, (float)height / 2f - 0.5f, -10f);
+        this.transform.position = new Vector3( (float)width / 2f - 0.5f, (float)height / 2f + height / 5f, -10f);
     }
 }
