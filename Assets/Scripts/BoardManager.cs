@@ -69,6 +69,7 @@ public class BoardManager : MonoBehaviour
         if(this.allGems[pos.x, pos.y] != null && this.allGems[pos.x, pos.y].isMatched){
             Destroy(this.allGems[pos.x, pos.y].gameObject);
             SpawnGem(new Vector2Int(pos.x, pos.y), gems[gems.Length - 1]);
+            allGems[pos.x, pos.y].isMatched = true;
         }
     }
 

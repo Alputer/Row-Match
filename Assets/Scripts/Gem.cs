@@ -80,9 +80,15 @@ public class Gem : MonoBehaviour
     }
 
     private void MovePieces(){
+        if(Board.allGems[pos.x, pos.y].isMatched)
+            return;
+        
+
         if(swipeAngle <= 45 && swipeAngle >= -45 && pos.x < Board.width - 1){
 
             neighborGem = Board.allGems[pos.x + 1, pos.y];
+            if(neighborGem.isMatched)
+                return;
             neighborGem.pos.x--;
             pos.x++;
 
@@ -91,6 +97,8 @@ public class Gem : MonoBehaviour
         else if(swipeAngle > 45 && swipeAngle < 135 && pos.y < Board.height - 1){
 
             neighborGem = Board.allGems[pos.x, pos.y + 1];
+            if(neighborGem.isMatched)
+                return;
             neighborGem.pos.y--;
             pos.y++;
 
@@ -98,6 +106,8 @@ public class Gem : MonoBehaviour
         else if(swipeAngle < -45 && swipeAngle > -135 && pos.y > 0){
 
             neighborGem = Board.allGems[pos.x, pos.y - 1];
+            if(neighborGem.isMatched)
+                return;
             neighborGem.pos.y++;
             pos.y--;
 
@@ -105,6 +115,8 @@ public class Gem : MonoBehaviour
         else if ((swipeAngle >= 135 || swipeAngle <= -135) && pos.x > 0){
 
             neighborGem = Board.allGems[pos.x - 1, pos.y];
+            if(neighborGem.isMatched)
+                return;
             neighborGem.pos.x++;
             pos.x--;
 
@@ -134,6 +146,6 @@ public class Gem : MonoBehaviour
             this.Board.replaceMatches();
 
         Board.currentState = BoardManager.BoardState.move;
-        
+
     }
 }
