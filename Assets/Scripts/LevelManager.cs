@@ -9,6 +9,10 @@ public class LevelManager : MonoBehaviour
     public int maxScore;
     public int currentScore;
 
+    public float displayScore;
+
+    public float scoreSpeed;
+
     public bool levelEnded = false;
 
     private BoardManager Board;
@@ -33,11 +37,19 @@ public class LevelManager : MonoBehaviour
             endRound();
         }
 
+        if(currentScore - displayScore > 0.2f)
+        this.displayScore = Mathf.Lerp(displayScore, currentScore, scoreSpeed * Time.deltaTime);
+        else
+        this.displayScore = currentScore;
+        uiManager.currentScoreText.text = displayScore.ToString("0");
+
     }
 
     public void moveMade(){
+
         this.moveCount--;
         uiManager.moveCountText.text = moveCount.ToString();
+
     }
 
     public void matchFound(Gem.GemType type){
@@ -65,12 +77,13 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Gem Type doesn't match any of the options, something went wrong.");
             break;
     }
-        uiManager.currentScoreText.text = currentScore.ToString();
+
     }
     private void endRound(){
         Debug.Log("Level ended");
         /*
         if(currentScore > maxScore){
+            UpdateMaxScore();
             DoCelebrityAnimation();
             GoHomeScreen();
         }
