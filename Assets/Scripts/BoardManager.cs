@@ -17,12 +17,26 @@ public class BoardManager : MonoBehaviour
     public Gem[,] allGems;
 
     public float gemSpeed;
+
+    public MatchFinder matchFinder;
+
+    public enum BoardState {wait, move};
+
+    public BoardState currentState = BoardState.move;
    
+   void Awake(){
+    this.matchFinder = FindObjectOfType<MatchFinder>();
+   }
     void Start(){
 
         allGems = new Gem[width, height];
         Setup();
 
+        
+    }
+
+    private void Update(){
+        //matchFinder.findAllMatches();
     }
 
     private void Setup(){
@@ -34,7 +48,7 @@ public class BoardManager : MonoBehaviour
                 backgroundTile.transform.parent = transform; // So that tiles don't fill the whole screen in unity game object menu
                 backgroundTile.name = $"BG Tile - {x}, {y}";
 
-                Gem gemToUse = gems[Random.Range(0, gems.Length)];
+                Gem gemToUse = gems[Random.Range(0, gems.Length - 1)];
 
                 SpawnGem(new Vector2Int(x, y), gemToUse);
             }
@@ -48,6 +62,21 @@ public class BoardManager : MonoBehaviour
         allGems[pos.x, pos.y] = gem;
 
         gem.SetupGem(pos, this);
+    }
+
+    private void replaceMatchedGemAt(Vector2Int pos){
+        //Double check
+        if(this.allGems[pos.x, pos.y] != null && this.allGems[pos.x, pos.y].isMatched){
+            Destroy(this.allGems[pos.x, pos.y].gameObject);
+            SpawnGem(new Vector2Int(pos.x, pos.y), gems[gems.Length - 1]);
+        }
+    }
+
+    public void replaceMatches(){
+        for(int i=0;i<matchFinder.currentMatches.Count;i++){
+            if(matchFinder.currentMatches[i] != null)
+                replaceMatchedGemAt(new Vector2Int(matchFinder.currentMatches[i].pos.x, matchFinder.currentMatches[i].pos.y));
+        }
     }
     
 }

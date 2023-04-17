@@ -17,6 +17,12 @@ public class Gem : MonoBehaviour
     private bool mousePressed;
     private float swipeAngle;
 
+    public bool isMatched;
+
+    public enum GemType { red, green, blue, yellow, purple};
+
+    public GemType type;
+
     // Neighbor gem to be swapped
     private Gem neighborGem;
     void Start()
@@ -26,17 +32,22 @@ public class Gem : MonoBehaviour
 
     void Update(){
 
-        if(Vector2.Distance(transform.position, pos) > 0.1f)
+        if(Vector2.Distance(transform.position, pos) > 0.01f)
         transform.position = Vector2.Lerp(transform.position, pos, Board.gemSpeed * Time.deltaTime);
-        else
+        else{
         transform.position = new Vector3(pos.x, pos.y, 0f);
-        
         Board.allGems[pos.x, pos.y] = this;
+        }
 
         if(mousePressed && Input.GetMouseButtonUp(0)){
             mousePressed = false;
+
+           if(Board.currentState == BoardManager.BoardState.move){
+
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             calculateAngle();
+
+           }
         }
     }
 
@@ -48,8 +59,12 @@ public class Gem : MonoBehaviour
     }
 
     private void OnMouseDown(){
+        if(Board.currentState == BoardManager.BoardState.move){
+
         firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePressed = true;
+
+        }
     }
 
     private void calculateAngle(){
@@ -59,7 +74,7 @@ public class Gem : MonoBehaviour
         swipeAngle = swipeAngle * 180 / Mathf.PI;
         Debug.Log(swipeAngle);
 
-        if(Vector2.Distance(firstTouchPosition, finalTouchPosition) > 0.5f){
+        if(Vector2.Distance(firstTouchPosition, finalTouchPosition) > 0.01f){
             MovePieces();
         }
     }
@@ -104,6 +119,21 @@ public class Gem : MonoBehaviour
         Board.allGems[pos.x, pos.y] = this;
         Board.allGems[neighborGem.pos.x, neighborGem.pos.y] = neighborGem;
         
+        StartCoroutine(CheckMatch());
+    }
 
+    public IEnumerator CheckMatch(){
+
+        Board.currentState = BoardManager.BoardState.wait;
+
+        yield return new WaitForSeconds(0.2f);
+
+        Board.matchFinder.findAllMatches();
+
+        if(this.isMatched || neighborGem.isMatched)
+            this.Board.replaceMatches();
+
+        Board.currentState = BoardManager.BoardState.move;
+        
     }
 }

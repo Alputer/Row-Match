@@ -7,13 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2007407312849838905, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070898008404723524, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.8102564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070898008404723524, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.9358974
+      objectReference: {fileID: 0}
     - target: {fileID: 2763785551940122513, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 15913fd90bd479a45a568c3067a75c5d, type: 3}
     - target: {fileID: 4306935188512320032, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
       propertyPath: m_Name
-      value: Red Jam
+      value: Red Jam Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8881738396913629373, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
       propertyPath: m_RootOrder
