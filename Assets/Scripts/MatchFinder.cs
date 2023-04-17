@@ -8,7 +8,8 @@ public class MatchFinder : MonoBehaviour
 
     private BoardManager board;
 
-    public List<Gem> currentMatches = new List<Gem>();
+    // Line of the match and type of the gems 
+    public List<(Gem.GemType type, int width)> currentMatches = new List<(Gem.GemType, int)>();
     
     void Awake()
     {
@@ -17,11 +18,16 @@ public class MatchFinder : MonoBehaviour
 
     public void findAllMatches(){
         for(int i=0;i<board.height;i++){
-            Gem.GemType candidateGemType = board.allGems[0, i].type;
+            Gem currentGem = board.allGems[0, i];
+            
+            // Already checked.
+            if(currentGem.isMatched)
+                continue;
+
             bool isRowMatch = true; 
             for(int j=1;j<board.width;j++){
 
-                if(board.allGems[j,i].type != candidateGemType){
+                if(board.allGems[j,i].type != currentGem.type){
                     isRowMatch = false;
                     break;
                 }
@@ -32,8 +38,8 @@ public class MatchFinder : MonoBehaviour
 
                 for(int j=0;j<board.width;j++){
                     board.allGems[j, i].isMatched = true;
-                    currentMatches.Add(board.allGems[j, i]);
                 }
+                currentMatches.Add((currentGem.type, currentGem.pos.y));
 
             }
 

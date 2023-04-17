@@ -74,9 +74,16 @@ public class BoardManager : MonoBehaviour
 
     public void replaceMatches(){
         for(int i=0;i<matchFinder.currentMatches.Count;i++){
-            if(matchFinder.currentMatches[i] != null)
-                replaceMatchedGemAt(new Vector2Int(matchFinder.currentMatches[i].pos.x, matchFinder.currentMatches[i].pos.y));
+
+                for(int j=0;j<this.width;j++){
+
+                replaceMatchedGemAt(new Vector2Int(j, matchFinder.currentMatches[i].width));
+    
+                }
+                this.levelManager.matchFound(matchFinder.currentMatches[i].type);
+
         }
+        matchFinder.currentMatches.Clear();
     }
     
 }
