@@ -74,7 +74,7 @@ public class BoardManager : MonoBehaviour
 
     public void replaceMatches(){
         for(int i=0;i<matchFinder.currentMatches.Count;i++){
-
+                
                 for(int j=0;j<this.width;j++){
 
                 replaceMatchedGemAt(new Vector2Int(j, matchFinder.currentMatches[i].width));

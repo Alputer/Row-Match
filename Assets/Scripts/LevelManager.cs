@@ -17,11 +17,11 @@ public class LevelManager : MonoBehaviour
 
     private BoardManager Board;
 
-    private UIManager uiManager;
+    private GamePlayUIManager uiManager;
     // Start is called before the first frame update
     void Awake()
     {
-        this.uiManager = FindObjectOfType<UIManager>();
+        this.uiManager = FindObjectOfType<GamePlayUIManager>();
         this.Board = FindObjectOfType<BoardManager>();
     }
 

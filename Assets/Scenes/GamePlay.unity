@@ -659,6 +659,8 @@ MonoBehaviour:
   maxScoreText: {fileID: 1161722104}
   currentScoreText: {fileID: 948248894}
   moveCountText: {fileID: 984483883}
+  levelTitles: []
+  levelMaxScores: []
 --- !u!1 &948248892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,8 +1358,8 @@ MonoBehaviour:
   - {fileID: 6155445597485441179, guid: 2dab12288a6884146a14f33d2d4dc5eb, type: 3}
   - {fileID: 2034796406736348487, guid: f59e89d8ae434a74da7e21cf09f4a0c3, type: 3}
   gemSpeed: 5
-  matchFinder: {fileID: 0}
-  levelManager: {fileID: 0}
+  matchFinder: {fileID: 257753042}
+  levelManager: {fileID: 1460865626}
   currentState: 1
 --- !u!4 &1848149409
 Transform:
