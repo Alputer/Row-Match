@@ -90,7 +90,7 @@ public class LevelManager : MonoBehaviour
     }
 
     }
-    private void endRound(){
+    public void endRound(){
         Debug.Log("Level ended");
         
         if(CrossSceneInfoManager.currentLevel != 10){

@@ -29,10 +29,11 @@ public class BoardManager : MonoBehaviour
    void Awake(){
     this.matchFinder = FindObjectOfType<MatchFinder>();
     this.levelManager = FindObjectOfType<LevelManager>();
+    this.width = CrossSceneInfoManager.currentLevelGridWidth;
+    this.height = CrossSceneInfoManager.currentLevelGridHeight;
    }
     void Start(){
-        this.width = CrossSceneInfoManager.currentLevelGridWidth;
-        this.height = CrossSceneInfoManager.currentLevelGridHeight;
+   
         allGems = new Gem[width, height];
         Setup();
 

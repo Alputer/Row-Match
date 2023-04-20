@@ -146,8 +146,12 @@ public class Gem : MonoBehaviour
 
         Board.matchFinder.findAllMatches();
 
-        if(this.isMatched || neighborGem.isMatched)
+        if(this.isMatched || neighborGem.isMatched){
             this.Board.replaceMatches();
+            if(!Board.matchFinder.isTherePossibleMatch()){
+                levelManager.endRound();
+            }
+        }
 
         Board.currentState = BoardManager.BoardState.move;
 

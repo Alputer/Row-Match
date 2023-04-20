@@ -75,7 +75,7 @@ public class MainSceneUIManager : MonoBehaviour
 
     }
     private void OnButtonClicked(int buttonIndex){
-        Debug.Log(buttonIndex);
+        Debug.Log($"Level Num: {buttonIndex}");
         if(!CrossSceneInfoManager.isLocked[buttonIndex]){
             CrossSceneInfoManager.setupLevelVariables(buttonIndex + 1); 
             SceneManager.LoadScene(levelsSceneName);
