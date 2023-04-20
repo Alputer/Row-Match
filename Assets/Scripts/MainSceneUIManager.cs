@@ -13,6 +13,8 @@ public class MainSceneUIManager : MonoBehaviour
     public GameObject mainCanvas;
     public GameObject popupCanvas;
 
+    public GameObject celebrationCanvas;
+
 
     public Button mainMenuButton;
     public List<Button> levelButtons;
@@ -58,7 +60,10 @@ public class MainSceneUIManager : MonoBehaviour
 
         }
 
-        
+        if(CrossSceneInfoManager.shouldCelebrate){
+            StartCoroutine(celebrate());
+        }
+
     }
 
     public void openLevelsPopup(){
@@ -75,10 +80,19 @@ public class MainSceneUIManager : MonoBehaviour
 
     }
     private void OnButtonClicked(int buttonIndex){
-        Debug.Log($"Level Num: {buttonIndex}");
+        Debug.Log($"Level Num: {buttonIndex + 1}");
         if(!CrossSceneInfoManager.isLocked[buttonIndex]){
             CrossSceneInfoManager.setupLevelVariables(buttonIndex + 1); 
             SceneManager.LoadScene(levelsSceneName);
         }
+    }
+
+    private IEnumerator celebrate(){
+            mainCanvas.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+            celebrationCanvas.SetActive(true);
+            yield return new WaitForSeconds(4.5f);
+            celebrationCanvas.SetActive(false);
+            popupCanvas.SetActive(true);
     }
 }

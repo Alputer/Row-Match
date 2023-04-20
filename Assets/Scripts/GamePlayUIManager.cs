@@ -10,6 +10,8 @@ public class GamePlayUIManager : MonoBehaviour
     public TMP_Text currentScoreText;
     public TMP_Text moveCountText;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {

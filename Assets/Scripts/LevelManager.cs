@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     public bool levelEnded = false;
 
+    public GameObject celebrationCanvas;
+
     private BoardManager Board;
 
     private GamePlayUIManager uiManager;
@@ -91,6 +93,7 @@ public class LevelManager : MonoBehaviour
 
     }
     public void endRound(){
+
         Debug.Log("Level ended");
         
         if(CrossSceneInfoManager.currentLevel != 10){
@@ -99,13 +102,18 @@ public class LevelManager : MonoBehaviour
 
         if(currentScore > maxScore){
             CrossSceneInfoManager.maxScores[CrossSceneInfoManager.currentLevel - 1] = currentScore;
-            //DoCelebrityAnimation();
-            SceneManager.LoadScene(mainSceneName);
+            CrossSceneInfoManager.shouldCelebrate = true;
+            StartCoroutine(returnMainScreen(1.2f));
         }
         else{
-            //DoLosingAnimation();
+            
+            CrossSceneInfoManager.shouldCelebrate = false;
             SceneManager.LoadScene(mainSceneName);
         }
-        
+    }
+
+    public IEnumerator returnMainScreen(float seconds){
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(mainSceneName);
     }
 }

@@ -1374,6 +1374,7 @@ MonoBehaviour:
   displayScore: 0
   scoreSpeed: 5
   levelEnded: 0
+  celebrationCanvas: {fileID: 0}
 --- !u!4 &1460865627
 Transform:
   m_ObjectHideFlags: 0

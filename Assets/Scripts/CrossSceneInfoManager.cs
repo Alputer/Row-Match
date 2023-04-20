@@ -17,6 +17,8 @@ public static class CrossSceneInfoManager
 
     public static int currentLevelMoveCount = 0;
 
+    public static bool shouldCelebrate = false;
+
 
     public static int[] currentLevelItems;  // 0 -> red 1 -> green 2 -> blue 3 -> yellow
 
