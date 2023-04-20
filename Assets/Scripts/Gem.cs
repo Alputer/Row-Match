@@ -141,7 +141,7 @@ public class Gem : MonoBehaviour
     public IEnumerator CheckMatch(){
 
         Board.currentState = BoardManager.BoardState.wait;
-    Debug.Log("Enter check match");
+
         yield return new WaitForSeconds(0.2f);
 
         Board.matchFinder.findAllMatches();

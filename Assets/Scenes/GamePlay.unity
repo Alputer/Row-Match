@@ -534,8 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f72292b80ebd04dbabe384f54a26fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 7
-  height: 7
 --- !u!1 &542136953
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,8 +657,6 @@ MonoBehaviour:
   maxScoreText: {fileID: 1161722104}
   currentScoreText: {fileID: 948248894}
   moveCountText: {fileID: 984483883}
-  levelTitles: []
-  levelMaxScores: []
 --- !u!1 &948248892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,11 +1348,11 @@ MonoBehaviour:
   height: 7
   tileBackgroundPrefab: {fileID: 7890577013044789884, guid: 5c47b14b72a5f634f8b82288edcf0f2e, type: 3}
   gems:
-  - {fileID: 2007407312849838905, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
   - {fileID: 2445806066440389446, guid: 09405dace106e504385ab96c3f44dff7, type: 3}
+  - {fileID: 2034796406736348487, guid: f59e89d8ae434a74da7e21cf09f4a0c3, type: 3}
+  - {fileID: 2007407312849838905, guid: 203a2a334591c1d498ff2eeebf6064e6, type: 3}
   - {fileID: 1158465144151593267, guid: 835c018c92a06d04786fcaf3166e4372, type: 3}
   - {fileID: 6155445597485441179, guid: 2dab12288a6884146a14f33d2d4dc5eb, type: 3}
-  - {fileID: 2034796406736348487, guid: f59e89d8ae434a74da7e21cf09f4a0c3, type: 3}
   gemSpeed: 5
   matchFinder: {fileID: 257753042}
   levelManager: {fileID: 1460865626}

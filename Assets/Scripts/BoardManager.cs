@@ -31,7 +31,8 @@ public class BoardManager : MonoBehaviour
     this.levelManager = FindObjectOfType<LevelManager>();
    }
     void Start(){
-
+        this.width = CrossSceneInfoManager.currentLevelGridWidth;
+        this.height = CrossSceneInfoManager.currentLevelGridHeight;
         allGems = new Gem[width, height];
         Setup();
 
@@ -47,7 +48,7 @@ public class BoardManager : MonoBehaviour
                 backgroundTile.transform.parent = transform; // So that tiles don't fill the whole screen in unity game object menu
                 backgroundTile.name = $"BG Tile - {x}, {y}";
 
-                Gem gemToUse = gems[Random.Range(0, gems.Length - 1)];
+                Gem gemToUse = gems[CrossSceneInfoManager.currentLevelItems[y * width + x]];
 
                 SpawnGem(new Vector2Int(x, y), gemToUse);
             }

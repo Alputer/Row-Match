@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
@@ -18,11 +18,22 @@ public class LevelManager : MonoBehaviour
     private BoardManager Board;
 
     private GamePlayUIManager uiManager;
+
+    private const string mainSceneName = "MainScene";
     // Start is called before the first frame update
     void Awake()
     {
         this.uiManager = FindObjectOfType<GamePlayUIManager>();
         this.Board = FindObjectOfType<BoardManager>();
+    }
+
+    void Start(){
+
+        this.moveCount = CrossSceneInfoManager.currentLevelMoveCount;
+        this.maxScore  = CrossSceneInfoManager.maxScores[CrossSceneInfoManager.currentLevel - 1];
+        this.currentScore = 0;
+        this.displayScore = 0;
+
     }
 
     // Update is called once per frame
@@ -81,16 +92,20 @@ public class LevelManager : MonoBehaviour
     }
     private void endRound(){
         Debug.Log("Level ended");
-        /*
+        
+        if(CrossSceneInfoManager.currentLevel != 10){
+        CrossSceneInfoManager.isLocked[CrossSceneInfoManager.currentLevel] = false;
+        }
+
         if(currentScore > maxScore){
-            UpdateMaxScore();
-            DoCelebrityAnimation();
-            GoHomeScreen();
+            CrossSceneInfoManager.maxScores[CrossSceneInfoManager.currentLevel - 1] = currentScore;
+            //DoCelebrityAnimation();
+            SceneManager.LoadScene(mainSceneName);
         }
         else{
-            DoLosingAnimation();
-            GoHomeScreen();
+            //DoLosingAnimation();
+            SceneManager.LoadScene(mainSceneName);
         }
-        */
+        
     }
 }

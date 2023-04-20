@@ -10,14 +10,12 @@ public class GamePlayUIManager : MonoBehaviour
     public TMP_Text currentScoreText;
     public TMP_Text moveCountText;
 
-    public List<TMP_Text> levelTitles;
-
-    public List<TMP_Text> levelMaxScores;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.moveCountText.SetText(CrossSceneInfoManager.currentLevelMoveCount.ToString());
+        this.maxScoreText.SetText(CrossSceneInfoManager.maxScores[CrossSceneInfoManager.currentLevel - 1].ToString()); 
+        this.currentScoreText.SetText("0"); 
     }
 
     // Update is called once per frame
