@@ -66,7 +66,7 @@ public class MainSceneUIManager : MonoBehaviour
             StartCoroutine(celebrate());
         }
         
-        if(!CrossSceneInfoManager.isFirstLoad){
+        else if(!CrossSceneInfoManager.isFirstLoad){
             openLevelsPopup();
         }
 

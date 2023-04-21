@@ -114,7 +114,6 @@ public class LevelManager : MonoBehaviour
             
             CrossSceneInfoManager.shouldCelebrate = false;
             StartCoroutine(returnMainScreen(1.2f));
-            SceneManager.LoadScene(mainSceneName);
             
         }
     }
