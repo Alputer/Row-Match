@@ -11,8 +11,14 @@ public class SFXManager : MonoBehaviour
 
     void Awake(){
 
-        instance = this;
+        
+        if(instance != null){
+            Destroy(this);
+            return;
+        }
 
+        instance = this;
+        DontDestroyOnLoad(this);
     }
 
     public void playSwipeSound(){
@@ -37,8 +43,13 @@ public class SFXManager : MonoBehaviour
 
     public void playGameEndLosingSound(){
 
-        
         gameEndLosingSound.Play();
+
+    }
+
+    public void playCelebrationSound(){
+
+        celebrationSound.Play();
 
     }
 

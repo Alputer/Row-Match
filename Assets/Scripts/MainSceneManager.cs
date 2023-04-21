@@ -17,16 +17,21 @@ public class MainSceneManager : MonoBehaviour
 
     public GameObject levelsContainer;
 
-
     public Button mainMenuButton;
     public List<Button> levelButtons;
 
     public Sprite lockedLevelButtonImage;
 
     public Sprite unlockedLevelButtonImage;
+
+    public AudioSource mainScreenAudio;
     private const string levelsSceneName = "GamePlay";
 
     void Awake(){
+
+        if(CrossSceneInfoManager.shouldCelebrate)
+        this.mainScreenAudio.gameObject.SetActive(false);
+
         levelButtons = Resources.FindObjectsOfTypeAll<Button>().ToList();
         levelButtons.RemoveAll(s => s.transform.parent == null || s.transform.parent.parent == null || s.transform.parent.parent.name != "LevelsContainer");
 
@@ -100,8 +105,13 @@ public class MainSceneManager : MonoBehaviour
             mainCanvas.SetActive(false);
             yield return new WaitForSeconds(0.5f);
             celebrationCanvas.SetActive(true);
+            SFXManager.instance.playCelebrationSound();
+            this.mainScreenAudio.gameObject.SetActive(false);
             yield return new WaitForSeconds(4.5f);
+            this.mainScreenAudio.gameObject.SetActive(true);
             celebrationCanvas.SetActive(false);
             popupCanvas.SetActive(true);
+            this.mainScreenAudio.gameObject.SetActive(true);
+            
     }
 }

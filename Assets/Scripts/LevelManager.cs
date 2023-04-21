@@ -15,7 +15,9 @@ public class LevelManager : MonoBehaviour
 
     public bool levelEnded = false;
 
-    public GameObject celebrationCanvas;
+    private bool levelEndedTriggered = false;
+
+    public AudioSource mainAudio;
 
     private BoardManager Board;
 
@@ -46,8 +48,9 @@ public class LevelManager : MonoBehaviour
             levelEnded = true;
         }
 
-        if(levelEnded && Board.currentState == BoardManager.BoardState.move){
-            endRound();
+        if(levelEnded && !levelEndedTriggered && Board.currentState == BoardManager.BoardState.move){
+           levelEndedTriggered = true;
+           endRound();
         }
 
         if(currentScore - displayScore > 0.2f)
@@ -93,16 +96,12 @@ public class LevelManager : MonoBehaviour
 
     }
     public void endRound(){
-        
-        if(currentScore <= maxScore){
-        SFXManager.instance.playGameEndLosingSound();
-        Debug.Log("Entered here");
-        }
 
+        CrossSceneInfoManager.isFirstLoad = false;    
 
-        CrossSceneInfoManager.isFirstLoad = false;     
+        this.mainAudio.gameObject.SetActive(false); 
         
-        if(CrossSceneInfoManager.currentLevel != 10){
+        if(CrossSceneInfoManager.currentLevel != 10 && this.currentScore > 0){
         CrossSceneInfoManager.isLocked[CrossSceneInfoManager.currentLevel] = false;
         }
 
@@ -110,18 +109,31 @@ public class LevelManager : MonoBehaviour
             
             CrossSceneInfoManager.maxScores[CrossSceneInfoManager.currentLevel - 1] = currentScore;
             CrossSceneInfoManager.shouldCelebrate = true;
-            StartCoroutine(returnMainScreen(1.2f));
+            StartCoroutine(returnMainScreen());
         }
         else{
             
             CrossSceneInfoManager.shouldCelebrate = false;
-            StartCoroutine(returnMainScreen(1.2f));
+            StartCoroutine(returnMainScreen());
             
         }
     }
 
-    public IEnumerator returnMainScreen(float seconds){
-        yield return new WaitForSeconds(seconds);
+    public IEnumerator returnMainScreen(){
+
+        if(!CrossSceneInfoManager.shouldCelebrate){
+
+        yield return new WaitForSeconds(1.2f);
+        SFXManager.instance.playGameEndLosingSound();
+        yield return new WaitForSeconds(1.9f);
+        }
+
+        else{
+
+        yield return new WaitForSeconds(2f);
+
+        }
+
         SceneManager.LoadScene(mainSceneName);
     }
 }

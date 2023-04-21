@@ -5575,6 +5575,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1450341926389140689, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5619,6 +5623,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9119361125321947129, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
+      propertyPath: celebrationSound
+      value: 
+      objectReference: {fileID: 985616894}
+    - target: {fileID: 9119361125321947129, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
+      propertyPath: gameEndLosingSound
+      value: 
+      objectReference: {fileID: 576463659}
     - target: {fileID: 9119361125321947131, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
       propertyPath: m_Name
       value: SFX Manager
@@ -6242,14 +6254,19 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497202199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.000015258789, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &576463659 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9119361126365103287, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
+  m_PrefabInstance: {fileID: 215052081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610271233
 GameObject:
   m_ObjectHideFlags: 0
@@ -6748,6 +6765,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &985616894 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1450341926389140689, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
+  m_PrefabInstance: {fileID: 215052081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059940839
 GameObject:
   m_ObjectHideFlags: 0
@@ -8060,6 +8082,7 @@ MonoBehaviour:
   levelButtons: []
   lockedLevelButtonImage: {fileID: 21300000, guid: 6b3435a81a63d734ebf5ae4a7db372f0, type: 3}
   unlockedLevelButtonImage: {fileID: 21300000, guid: ac4346daebe98974496dbecb7756aa83, type: 3}
+  mainScreenAudio: {fileID: 497202200}
 --- !u!4 &1890427128
 Transform:
   m_ObjectHideFlags: 0
@@ -8076,7 +8099,7 @@ Transform:
   - {fileID: 80408628}
   - {fileID: 1197615834}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1941346878 stripped
 MonoBehaviour:

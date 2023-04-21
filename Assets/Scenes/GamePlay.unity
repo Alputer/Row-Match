@@ -1374,7 +1374,7 @@ MonoBehaviour:
   displayScore: 0
   scoreSpeed: 5
   levelEnded: 0
-  celebrationCanvas: {fileID: 0}
+  mainAudio: {fileID: 1657333059}
 --- !u!4 &1460865627
 Transform:
   m_ObjectHideFlags: 0
@@ -1710,60 +1710,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856072861}
   m_CullTransparentMesh: 1
---- !u!1001 &9119361126015074910
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947128, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119361125321947131, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
-      propertyPath: m_Name
-      value: SFX Manager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d76bbfc3c07765045bc9ba34a703aa58, type: 3}
