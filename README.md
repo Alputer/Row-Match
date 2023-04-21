@@ -1,5 +1,9 @@
 # Row-Match 
 
+## Links
+[Description](https://github.com/Alputer/Row-Match/files/11299252/Dream.Games.-.Software.Engineering.Intern.Study.pdf)<br>
+[Demo](https://www.youtube.com/watch?v=kSclWRnpakE)
+
 ## Possible Improvements
 
 This project is far from being a final product, therefore all aspects of the project are open for improvement, especially UI and animations.
@@ -21,13 +25,17 @@ File: Scripts/MatchFinder
 
 Function: public bool isTherePossibleMatch()
 
-<b> 3) Code Conventions </b>
+<b> 3) Scaling and Responsiveness</b>
+
+I designed the project using 9:16 aspect ratio inside the unity editor. However, its UI is not consistent for each device. In some devices, there are discrepencies and this may lead to bad user experience.
+
+<b> 4) Code Conventions </b>
 
 I used Visual Studio Code to write C#. I didn't use automated tools and stick to some general conventions while adding spaces, placing curly braces and
 naming functions and variables. I should use editors which have better support for unity game development such as visual studio and use automated
 tools to follow conventions and have better code readibility.
 
-<b> 4) Code Architecture </b>
+<b> 5) Code Architecture </b>
 
 As the size of the project grows, adding new features become cumbersome and I appreciated its importance in this project. I need to implement a better architecture.
 Sometimes I was confused whether I should have a manager object or handle specific cases inside other files.
