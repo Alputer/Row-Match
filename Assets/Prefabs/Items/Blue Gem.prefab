@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2007407312849838905}
   - component: {fileID: 2070898008404723524}
   m_Layer: 0
-  m_Name: Blue Jam
+  m_Name: Blue Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0}
   Board: {fileID: 0}
+  isMatched: 0
   type: 2
 --- !u!61 &2070898008404723524
 BoxCollider2D:
