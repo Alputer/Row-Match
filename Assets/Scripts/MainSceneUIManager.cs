@@ -15,6 +15,8 @@ public class MainSceneUIManager : MonoBehaviour
 
     public GameObject celebrationCanvas;
 
+    public GameObject levelsContainer;
+
 
     public Button mainMenuButton;
     public List<Button> levelButtons;
@@ -62,6 +64,10 @@ public class MainSceneUIManager : MonoBehaviour
 
         if(CrossSceneInfoManager.shouldCelebrate){
             StartCoroutine(celebrate());
+        }
+        
+        if(!CrossSceneInfoManager.isFirstLoad){
+            openLevelsPopup();
         }
 
     }

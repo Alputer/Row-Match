@@ -17,6 +17,8 @@ public static class CrossSceneInfoManager
 
     public static int currentLevelMoveCount = 0;
 
+    public static bool isFirstLoad = true;
+
     public static bool shouldCelebrate = false;
 
 

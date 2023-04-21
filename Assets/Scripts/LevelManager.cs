@@ -95,6 +95,11 @@ public class LevelManager : MonoBehaviour
     public void endRound(){
 
         Debug.Log("Level ended");
+
+        CrossSceneInfoManager.isFirstLoad = false;
+
+        Debug.Log($"CrossSceneInfoManager.isFirstLoad: {CrossSceneInfoManager.isFirstLoad}");
+        
         
         if(CrossSceneInfoManager.currentLevel != 10){
         CrossSceneInfoManager.isLocked[CrossSceneInfoManager.currentLevel] = false;
@@ -108,7 +113,9 @@ public class LevelManager : MonoBehaviour
         else{
             
             CrossSceneInfoManager.shouldCelebrate = false;
+            StartCoroutine(returnMainScreen(1.2f));
             SceneManager.LoadScene(mainSceneName);
+            
         }
     }
 

@@ -5193,6 +5193,7 @@ GameObject:
   - component: {fileID: 80408627}
   - component: {fileID: 80408626}
   - component: {fileID: 80408625}
+  - component: {fileID: 80408629}
   m_Layer: 5
   m_Name: PopupCanvas
   m_TagString: Untagged
@@ -5284,6 +5285,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!111 &80408629
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80408624}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c9b3ef1ec7fbde24abfe5b5d442545be, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c9b3ef1ec7fbde24abfe5b5d442545be, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &95709159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6080,8 +6097,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 339, y: 0.00030136}
-  m_SizeDelta: {x: 266.41, y: 153.068}
+  m_AnchoredPosition: {x: 342, y: -106.40004}
+  m_SizeDelta: {x: 171.29, y: 99.563}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610271235
 MonoBehaviour:
@@ -6577,8 +6594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -211.107, y: 0.00025558}
-  m_SizeDelta: {x: 657.585, y: 212.8}
+  m_AnchoredPosition: {x: -240.87102, y: -106.400085}
+  m_SizeDelta: {x: 598.047, y: 212.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059940841
 MonoBehaviour:
@@ -6663,7 +6680,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 2.2067266, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6872,6 +6889,7 @@ GameObject:
   - component: {fileID: 1197615837}
   - component: {fileID: 1197615836}
   - component: {fileID: 1197615835}
+  - component: {fileID: 1197615838}
   m_Layer: 5
   m_Name: CelebrationCanvas
   m_TagString: Untagged
@@ -6963,6 +6981,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!111 &1197615838
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197615833}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a00732846114f1f418ecb02715333270, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a00732846114f1f418ecb02715333270, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1235863101
 GameObject:
   m_ObjectHideFlags: 0
@@ -7001,7 +7035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50.816406}
+  m_AnchoredPosition: {x: 0, y: -50.816223}
   m_SizeDelta: {x: 0, y: -780.6373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235863103
@@ -7047,7 +7081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1109528, g: 0.8018868, b: 0.64967656, a: 0.392}
+  m_Color: {r: 0.53712165, g: 0.8679245, b: 0.30841336, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7614,7 +7648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -905.40045}
+  m_AnchoredPosition: {x: 0, y: -944.7318}
   m_SizeDelta: {x: 1080, y: 3028.981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1871401682
@@ -7810,7 +7844,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1890427128}
   - component: {fileID: 1890427127}
-  - component: {fileID: 1890427129}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -7833,6 +7866,7 @@ MonoBehaviour:
   mainCanvas: {fileID: 2035308058}
   popupCanvas: {fileID: 80408624}
   celebrationCanvas: {fileID: 1197615833}
+  levelsContainer: {fileID: 1680720085}
   mainMenuButton: {fileID: 1941346878}
   levelButtons: []
   lockedLevelButtonImage: {fileID: 21300000, guid: 6b3435a81a63d734ebf5ae4a7db372f0, type: 3}
@@ -7855,22 +7889,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &1890427129
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890427126}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a00732846114f1f418ecb02715333270, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a00732846114f1f418ecb02715333270, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &1941346878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2697271893576039555, guid: 582033f9ebfadc048bc7842c258b4b84, type: 3}
