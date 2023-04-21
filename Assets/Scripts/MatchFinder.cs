@@ -63,8 +63,8 @@ public class MatchFinder : MonoBehaviour
             int currentMatchedRow = matchedRows[i];
             int previousMatchedRow = matchedRows[i-1];
             List<int> numOfGems = new List<int>(){0,0,0,0};
-            //Debug.Log($"PreviousMatchedRow: {previousMatchedRow}");
-            //Debug.Log($"CurrentMatchedRow: {currentMatchedRow}");
+            
+
             for(int j = previousMatchedRow + 1; j < currentMatchedRow;j++){
                 for(int k = 0; k < board.width; k++){
                     

@@ -74,7 +74,7 @@ public class Gem : MonoBehaviour
         swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x);
         // In degree
         swipeAngle = swipeAngle * 180 / Mathf.PI;
-        Debug.Log(swipeAngle);
+        
 
         if(Vector2.Distance(firstTouchPosition, finalTouchPosition) > 0.01f){
             MovePieces();
@@ -133,6 +133,7 @@ public class Gem : MonoBehaviour
         Board.allGems[pos.x, pos.y] = this;
         Board.allGems[neighborGem.pos.x, neighborGem.pos.y] = neighborGem;
 
+        SFXManager.instance.playSwipeSound();
         levelManager.moveMade();
         
         StartCoroutine(CheckMatch());
@@ -148,7 +149,10 @@ public class Gem : MonoBehaviour
 
         if(this.isMatched || neighborGem.isMatched){
             this.Board.replaceMatches();
+            SFXManager.instance.playMatchSound();
+            
             if(!Board.matchFinder.isTherePossibleMatch()){
+
                 levelManager.endRound();
             }
         }

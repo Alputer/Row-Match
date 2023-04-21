@@ -93,19 +93,21 @@ public class LevelManager : MonoBehaviour
 
     }
     public void endRound(){
-
-        Debug.Log("Level ended");
-
-        CrossSceneInfoManager.isFirstLoad = false;
-
-        Debug.Log($"CrossSceneInfoManager.isFirstLoad: {CrossSceneInfoManager.isFirstLoad}");
         
+        if(currentScore <= maxScore){
+        SFXManager.instance.playGameEndLosingSound();
+        Debug.Log("Entered here");
+        }
+
+
+        CrossSceneInfoManager.isFirstLoad = false;     
         
         if(CrossSceneInfoManager.currentLevel != 10){
         CrossSceneInfoManager.isLocked[CrossSceneInfoManager.currentLevel] = false;
         }
 
         if(currentScore > maxScore){
+            
             CrossSceneInfoManager.maxScores[CrossSceneInfoManager.currentLevel - 1] = currentScore;
             CrossSceneInfoManager.shouldCelebrate = true;
             StartCoroutine(returnMainScreen(1.2f));
