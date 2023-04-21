@@ -1,5 +1,12 @@
 # Row-Match 
 
+## How to Run
+
+* Clone the project
+* Open the project in unity
+* Choose main scene from "Assets/Scenes" folder
+* Click run
+
 ## Links
 [Description](https://github.com/Alputer/Row-Match/files/11299252/Dream.Games.-.Software.Engineering.Intern.Study.pdf)<br>
 [Demo](https://www.youtube.com/watch?v=kSclWRnpakE)
