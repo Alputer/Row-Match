@@ -74,19 +74,19 @@ public class LevelManager : MonoBehaviour
 
     {
         case Gem.GemType.red:
-            this.currentScore += 100;
+            this.currentScore += 100 * Board.width;
             break;
 
         case Gem.GemType.green:
-            this.currentScore += 150;
+            this.currentScore += 150 * Board.width;
             break;
 
         case Gem.GemType.blue:
-            this.currentScore += 200;
+            this.currentScore += 200 * Board.width;
             break;
 
         case Gem.GemType.yellow:
-            this.currentScore += 250;
+            this.currentScore += 250 * Board.width;
             break;
 
         default:
